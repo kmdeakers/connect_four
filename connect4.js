@@ -156,7 +156,7 @@ function checkForWin() {
    * currPlayer
    */
   function _win(cells) {
-
+    
     // TODO: Check four cells to see if they're all legal & all color of current
     // player
 

@@ -38,12 +38,12 @@ function makeBoard() {
 function makeHtmlBoard() {
   const htmlBoard = document.getElementById('board');
 
-  // TODO: add comment for this code
+  //  create clickable drop row
   const top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
 
-  // TODO: add comment for this code
+  //  fill drop row with cells and add id
   for (let x = 0; x < WIDTH; x++) {
     let headCell = document.createElement("td");
     headCell.setAttribute("id", `top-${x}`);
@@ -55,19 +55,19 @@ function makeHtmlBoard() {
   // uses HEIGHT to create table rows
   // uses WIDTH to create table cells for each row
   for (let y = 0; y < HEIGHT; y++) {
-    // TODO: Create a table row element and assign to a "row" variable
+    //  Create a table row element and assign to a "row" variable
     let row = document.createElement('tr');
 
     for (let x = 0; x < WIDTH; x++) {
-      // TODO: Create a table cell element and assign to a "cell" variable
+      //  Create a table cell element and assign to a "cell" variable
       let cell = document.createElement('td');
-      // TODO: add an id, c-y-x, to the above table cell element
+      //  add an id, c-y-x, to the above table cell element
       // you'll use this later, so make sure you use c-y-x
        cell.setAttribute('id', `c-${y}-${x}`);
-      // TODO: append the table cell to the table row
+      //  append the table cell to the table row
       row.appendChild(cell);
     }
-    // TODO: append the row to the html board
+    //  append the row to the html board
     htmlBoard.appendChild(row);
   }
 }
@@ -83,6 +83,7 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  
 }
 
 /** endGame: announce game end */

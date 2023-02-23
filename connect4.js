@@ -11,7 +11,7 @@ const WIDTH = 7; //y
 const HEIGHT = 6; //x
 
 let currPlayer = 1; // active player: 1 or 2
-const BOARD = []; // array of rows, each row is array of cells  (board[y][x])
+let board = []; // array of rows, each row is array of cells  (board[y][x])
 
 
 
@@ -22,15 +22,16 @@ const BOARD = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
   // set "board" to empty HEIGHT x WIDTH matrix array
-  for (let y = 0; y < WIDTH; y++){
+  for (let y = 0; y < HEIGHT; y++){
     let row = [];
-    for (let x = 0; x < HEIGHT; x++){
-      let column = [];
+    for (let x = 0; x < WIDTH; x++){
+      let column = null;
       row.push(column);
     }
-    BOARD.push(row);
+    console.log(row);
+    board.push(row);
   }
-  console.log(BOARD);
+  console.log(board);
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
@@ -57,7 +58,7 @@ function makeHtmlBoard() {
   for (let y = 0; y < HEIGHT; y++) {
     //  Create a table row element and assign to a "row" variable
     let row = document.createElement('tr');
-
+    row.setAttribute("id", `row-${y}`);
     for (let x = 0; x < WIDTH; x++) {
       //  Create a table cell element and assign to a "cell" variable
       let cell = document.createElement('td');
@@ -83,7 +84,7 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
-  
+
 }
 
 /** endGame: announce game end */
